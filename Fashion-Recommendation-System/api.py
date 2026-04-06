@@ -5,10 +5,10 @@ import os
 from PIL import Image
 import numpy as np
 import pickle
-import tensorflow
+import tensorflow as tf
 from tensorflow.keras.preprocessing import image
 from tensorflow.keras.layers import GlobalMaxPooling2D
-from tensorflow.keras.applications.resnet50 import ResNet50, preprocess_input, decode_predictions
+from tensorflow.keras.applications.mobilenet_v2 import MobileNetV2, preprocess_input, decode_predictions
 from sklearn.neighbors import NearestNeighbors
 from numpy.linalg import norm
 import shutil
@@ -27,16 +27,17 @@ app.add_middleware(
 feature_list = np.array(pickle.load(open('embeddings.pkl','rb')))
 filenames = pickle.load(open('filenames.pkl','rb'))
 
-# Model definition
-base_model = ResNet50(weights='imagenet',include_top=False,input_shape=(224,224,3))
+# Load a single lightweight model for both feature extraction and label prediction
+# MobileNetV2 uses ~30MB vs ResNet50's ~100MB, saving significant RAM
+classifier = MobileNetV2(weights='imagenet')
+
+base_model = MobileNetV2(weights='imagenet', include_top=False, input_shape=(224, 224, 3))
 base_model.trainable = False
 
-model = tensorflow.keras.Sequential([
+model = tf.keras.Sequential([
     base_model,
     GlobalMaxPooling2D()
 ])
-
-classifier = ResNet50(weights='imagenet')
 
 def get_label(img_path):
     try:
