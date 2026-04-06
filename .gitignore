@@ -12,7 +12,6 @@ build/
 # Large assets and models
 Fashion-Recommendation-System/images/
 Fashion-Recommendation-System/uploads/
-*.pkl
 *.h5
 *.h6
 *.pt
