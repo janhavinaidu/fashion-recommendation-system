@@ -32,14 +32,7 @@ const HeroSection = ({ onTryNow }: HeroSectionProps) => {
       </div>
 
       <div className="relative z-10 text-center max-w-4xl mx-auto px-6">
-        <div className="animate-fade-up">
-          <div className="inline-flex items-center gap-2.5 px-5 py-2.5 rounded-full glass-card mb-10">
-            <Sparkles className="w-4 h-4 text-gold" />
-            <span className="text-sm font-semibold text-muted-foreground tracking-widest uppercase">
-              Powered by Visual AI
-            </span>
-          </div>
-        </div>
+
 
         <h1 className="animate-fade-up-delay-1 text-6xl md:text-8xl lg:text-9xl font-display font-semibold leading-[0.9] mb-8">
           <span className="text-foreground">Discover</span>

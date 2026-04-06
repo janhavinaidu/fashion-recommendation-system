@@ -99,9 +99,7 @@ const Index = () => {
               About
             </a>
           </nav>
-          <button className="px-5 py-2.5 rounded-full bg-secondary text-secondary-foreground text-sm font-medium hover:bg-accent transition-colors duration-300">
-            Sign In
-          </button>
+
         </div>
       </header>
 
