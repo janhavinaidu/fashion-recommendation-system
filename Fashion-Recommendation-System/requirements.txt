@@ -1,0 +1,10 @@
+tensorflow
+numpy
+scikit-learn
+opencv-python
+streamlit
+Pillow
+tqdm
+fastapi
+uvicorn
+python-multipart

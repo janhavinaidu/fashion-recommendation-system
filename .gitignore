@@ -1,0 +1,19 @@
+venv/
+node_modules/
+__pycache__/
+.env
+.DS_Store
+dist/
+build/
+.next/
+.vscode/
+.idea/
+
+# Large assets and models
+Fashion-Recommendation-System/images/
+Fashion-Recommendation-System/uploads/
+*.pkl
+*.h5
+*.h6
+*.pt
+
